@@ -21,7 +21,6 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            cd Ada.UrlShortner/
             docker build -f Ada.UrlShortner/Ada.UrlShortner/Dockerfile Ada.UrlShortner/ -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/urlshortner:${{ github.sha }}
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/urlshortner:${{ github.sha }}
 
